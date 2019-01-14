@@ -1,0 +1,58 @@
+<h1>订餐记录</h1>
+<div>
+  <form method="get" action="<%= send("search_#{@model.pluralize}_path") %>">
+    <div>
+      <span>工号：
+        <input type="text" name="order[user_id]" value="<%= @user_id %>"/>
+      </span>
+
+      <input type="submit" value="查 找" class="btn btn-primary"/>
+    </div>
+  </form>
+
+
+
+</div>
+
+<%= form_tag controller: 'orders', action: 'pick', method: 'post' do %>
+
+    <div class="col-sm-3">
+      <input type="submit" class="btn btn-warning" value="订餐" style="width: 200px;"/>
+    </div>
+
+<% end %>
+<%= link_to "导出", send("download_#{@model.pluralize}_path"), data: {confirm: '确定导出?'}, :class => 'btn btn-default' %>
+
+
+<div class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @orders %>
+  </div>
+  <%= will_paginate @orders, :container => false %>
+</div>
+<table class="table table-bordered table-striped globle-table">
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>日期</th>
+    <th>工号</th>
+    <th>姓名</th>
+    <th>状态</th>
+    <th colspan="2"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @orders.each_with_index do |order, i| %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td><%= order.order_date %></td>
+        <td><%= order.user.nr %></td>
+        <td><%= order.user.name %></td>
+        <td><%= OrderState.display(order.status) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>

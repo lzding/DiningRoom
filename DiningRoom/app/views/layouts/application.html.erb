@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dining Room</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</head>
+<body>
+
+<%= render "shared/menu" %>
+
+<p class="notice alert"><%= notice %><%= alert %></p>
+
+<%= yield %>
+</body>
+
+<%= yield :javascript_includes %>
+
+<!--<%#= render :partial => "shared/handling_msg_box", :locals => {:handlemsg => "处理中..."} %>-->
+</html>

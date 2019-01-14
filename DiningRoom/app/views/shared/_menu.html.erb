@@ -1,0 +1,22 @@
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $("#menu").menu();
+    });
+</script>
+
+<ul class="menu boxed">
+  <li id="welcome_li"><a href="/"><i class="glyphicon glyphicon-home"></i> &nbsp;主页</a></li>
+
+  <li><a href="#">订餐管理 &nbsp;<i class="glyphicon glyphicon-chevron-down" style="font-size: .8em;color:black;"></i></a>
+    <ul>
+      <%# if current_user.permission?(:view_report) %>
+          <li><a href="<%= orders_path %>">订餐记录</a></li>
+      <%# end %>
+    </ul>
+  </li>
+
+
+  <li>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  </li>
+</ul>

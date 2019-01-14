@@ -1,0 +1,50 @@
+<style>
+    .welcome_sentence {
+        height: 160px;
+        width: 100%;
+        text-align: center;
+        line-height: 160px;
+        font-size: 3em;
+        background: white;
+        /*text-shadow: 2px 2px 10px #999;*/
+    }
+
+    .welcome_user_message {
+        margin-top: 20px;
+        text-align: center;
+        height: 280px;
+        background: white;
+    }
+
+    .welcome_user_name {
+        padding: 40px 0 20px 0;
+        font-size: 4em;
+        /*text-shadow: 2px 2px 10px #999;*/
+    }
+
+    .welcome_user_property {
+        width: 300px;
+        height: 100px;
+        background: steelblue;
+        border-radius: 20px;
+        line-height: 100px;
+        color: #fefefe;
+        font-size: 30px;
+        margin-right: 40px;
+    }
+
+</style>
+
+<div class="welcome_sentence">
+  Welcome To Dining Room OnLine System
+</div>
+
+<div class="welcome_user_message">
+  <div class="welcome_user_name">
+    Hello,
+    <% if current_user %> <%= current_user.name %>
+    <% end %>
+  </div>
+
+  <hr style="border-bottom: 1px dashed #999;">
+</div>
