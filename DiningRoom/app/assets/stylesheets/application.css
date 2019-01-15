@@ -1,4 +1,3 @@
-@import "bootstrap";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -20,7 +19,10 @@
  *=require colpick
  *=require bootstrap-select
  *=require panel
- *=require pick_panel
  *=require nav-menu
- *= require_tree .
+ *=require_tree .
  */
+
+input[readonly] {
+  background-color: lightgrey;
+}

@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.string :id, :limit => 36, :primary => true, :null => false
 
       t.string :user_id
-      t.string :order_date
+      t.datetime :order_date
       t.integer :status
       t.string :pick_user_id
 

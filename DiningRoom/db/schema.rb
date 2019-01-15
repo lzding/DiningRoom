@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_14_083955) do
+ActiveRecord::Schema.define(version: 2019_01_15_072944) do
+
+  create_table "menus", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "dinner_date"
+    t.integer "dinner_type"
+    t.string "dish_one"
+    t.string "dish_two"
+    t.string "dish_three"
+    t.string "soup"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dinner_date"], name: "index_menus_on_dinner_date"
+    t.index ["dinner_type"], name: "index_menus_on_dinner_type"
+  end
 
   create_table "orders", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_id"
-    t.string "order_date"
+    t.datetime "order_date"
     t.integer "status"
     t.string "pick_user_id"
     t.datetime "created_at", null: false

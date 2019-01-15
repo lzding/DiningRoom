@@ -1,10 +1,26 @@
 Rails.application.routes.draw do
 
+  resources :files do
+    collection do
+      get :download
+    end
+  end
+
+
+  resources :menus do
+    collection do
+      get :search
+      match :import, to: :import, via: [:get, :post]
+      get :download
+      get :template
+    end
+  end
+
   resources :orders do
     collection do
       post :pick
       get :search
-      get :import
+      match :import, to: :import, via: [:get, :post]
       get :download
       get :template
     end

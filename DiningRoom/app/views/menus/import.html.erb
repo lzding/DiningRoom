@@ -1,0 +1,55 @@
+<style>
+    .container {
+        width: 60%;
+    }
+
+    a:hover {
+        background-color: white;
+        color: black;
+    }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        data_upload("#item-data-uploader", 'xlsx');
+    });
+</script>
+
+<p id="notice"><%= notice %></p>
+
+
+<div class="panel panel-default">
+  <ol class="breadcrumb" style="background: transparent;padding: 20px 0 0 20px;font-size: 1.2em;">
+    <li class="active">订餐管理</li>
+    <li>
+      <a href="/menus">本周菜单</a>
+    </li>
+    <li class="active">文件导入菜单</li>
+  </ol>
+</div>
+
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <div class="panel-title">
+        导入菜单
+      </div>
+    </div>
+
+    <div class="panel-body">
+      <div style="margin: 10px;">
+        请选择菜单文件：
+        <hr style="border-bottom: 1px dashed #000;margin: 5px 0 10px 0;">
+
+        <input id="item-data-uploader" type="file" name="files[]" data-url="/menus/import"/>
+
+        <div class="abstractblock" id="item-data-uploader-preview" style="display:none;"></div>
+      </div>
+      <hr style="border-bottom: 1px dashed #000000;margin: 5px 0 0 5px;">
+
+      <div style="margin: 10px 0 0 0;" class="col-sm-12">
+        <a href="/files/download?folder=template&file=导入菜单模版.xlsx">下载菜单模板</a>
+      </div>
+    </div>
+  </div>
+</div>

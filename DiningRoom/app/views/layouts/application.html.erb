@@ -2,11 +2,9 @@
 <html>
 <head>
   <title>Dining Room</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
 
@@ -17,7 +15,9 @@
 <%= yield %>
 </body>
 
+<input type="hidden" value="<%= @model %>_li" id='active_li'/>
+
 <%= yield :javascript_includes %>
 
-<!--<%#= render :partial => "shared/handling_msg_box", :locals => {:handlemsg => "处理中..."} %>-->
+<%= render :partial => "shared/handling_msg_box", :locals => {:handlemsg => "处理中..."} %>
 </html>

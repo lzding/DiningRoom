@@ -2,10 +2,10 @@ class OrderService
 
   def self.pick_order(user)
 
-    order = Order.where(user_id: user.id, order_date: Time.now.strftime("%y-%m-%d"))
+    order = Order.where(user_id: user.id, order_date: Time.now.at_beginning_of_day)
 
     if true #order.blank?
-      order = Order.create(user_id: user.id, order_date: Time.now.strftime("%y-%m-%d"), status: OrderState::ORDERED)
+      order = Order.create(user_id: user.id, order_date: Time.now.at_beginning_of_day, status: OrderState::ORDERED)
     end
   end
 

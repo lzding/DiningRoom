@@ -29,7 +29,6 @@ module ApplicationHelper
   #end
 
   def search
-    puts '___________________search______________________'
     @condition=params[@model]
     query=model.all #.unscoped
     @condition.each do |k, v|
@@ -63,7 +62,7 @@ module ApplicationHelper
 
     if params.has_key? "download"
       send_data(query.to_xlsx(query),
-                :type => "application/vnd.openxmlformates-officedocument.spreadsheetml.sheet",
+                :type => "application/xlsx",
                 :filename => @model.pluralize+".xlsx")
       #render :json => query.to_xlsx(query)
     else

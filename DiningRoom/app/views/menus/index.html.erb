@@ -1,0 +1,125 @@
+<style>
+    .col-sm-12 {
+        height: 40px;
+    }
+
+    .table > thead > tr > th, .table > tbody > tr > td {
+        text-align: center;
+    }
+
+    .IconA {
+        margin: 0 10px;
+        font-size: 1.2em;
+    }
+
+    .IconA:hover {
+        text-decoration: none;
+        background-color: white;
+    }
+    a:hover, a:active {
+        text-decoration: none;
+        background-color: white;
+        color: black;
+        outline: none;
+    }
+</style>
+
+<% if @msg && !@msg.result %>
+    <div class="error">
+      <%= @msg.content %>
+    </div>
+<% end %>
+
+<div class="panel panel-default">
+  <ol class="breadcrumb" style="background: transparent;padding: 20px 0 0 20px;font-size: 1.2em;">
+    <li class="active">订餐管理</li>
+    <li class="active">
+      本周菜单
+    </li>
+  </ol>
+</div>
+
+
+<form method="get" action="<%= send("search_#{@model.pluralize}_path") %>">
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <div class="col-sm-12">
+        <div class="col-sm-4">
+          菜单日期：
+          <input type="text" name="menu[dinner_date][start]" class="datepicker" value="<%= @dinner_date_start %>"/>
+          ~ <input type="text" name="menu[dinner_date][end]" class="datepicker" value="<%= @dinner_date_end %>"/>
+        </div>
+        <div class="col-sm-4">
+          <input type="submit" value="查找" class="btn btn-primary" name="search" style="width: 200px;"/>
+        </div>
+        <%# if current_user.permission?(:operate_basic_info_create) %>
+        <div class="col-sm-4">
+          <%= link_to "上传/更新菜单", send("import_#{@model.pluralize}_path"), :class => 'btn btn-primary', :style => 'width: 150px;color:white' %>
+        </div>
+        <%# end %>
+      </div>
+
+    </div>
+  </div>
+</form>
+
+<br>
+<div class="digg_pagination" style="margin-bottom: 0;">
+  <div class="page_info">
+    <%= page_entries_info @menus %>
+  </div>
+  <%= will_paginate @menus, :container => false %>
+</div>
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>序号</th>
+    <th>日期</th>
+    <th>星期</th>
+    <th>类型</th>
+    <th>菜 1</th>
+    <th>菜 2</th>
+    <th>菜 3</th>
+    <th>汤</th>
+    <th colspan="1">操作</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @menus.each_with_index do |menu, index| %>
+      <tr>
+        <td><%= index+@menus.offset+1 %>
+        <td><%= menu.dinner_date.localtime.strftime('%Y-%m-%d') %></td>
+        <td><%= menu.dinner_date.localtime.strftime('%A') %></td>
+        <td><%= MenuType.display(menu.dinner_type)  %></td>
+        <td><%= menu.dish_one %></td>
+        <td><%= menu.dish_two %></td>
+        <td><%= menu.dish_three %></td>
+        <td><%= menu.soup %></td>
+
+        <td>
+          <%# if current_user.permission?(:operate_basic_info_edit) %>
+              <%#= link_to content_tag(:i, '', :class => 'glyphicon glyphicon-pencil', :style => 'color:#4F94CD;'), edit_menu_path(menu), :class => 'IconA', :title => '编辑' %>
+          <%# end %>
+          <%# if current_user.permission?(:operate_basic_info_delete) %>
+              <%= link_to content_tag(:i, '', :class => 'glyphicon glyphicon-trash', :style => 'color:darkred;'), menu, method: :delete, data: {confirm: '确认删除?'}, :class => 'IconA', :title => '删除' %>
+          <%# end %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="digg_pagination">
+  <%= will_paginate @menus, :container => false %>
+</div>
+
+
+<script>
+    $(function () {
+        $(".datepicker").datetimepicker({
+            lang: 'ch',
+            format: 'Y-m-d'
+        });
+    });
+</script>

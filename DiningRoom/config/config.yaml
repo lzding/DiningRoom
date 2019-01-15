@@ -1,0 +1,12 @@
+format:
+ :csv_splitor: ';'
+ :update_marker: 'Operator'
+ :file_max_size: 20971520
+ 
+path:
+ :updata_file_path: 'uploadfiles/data'
+ :download_file_path: 'uploadfiles/download'
+ :template_file_path: 'uploadfiles/template'
+ :import_users_file_path: 'uploadfiles/users'
+
+
