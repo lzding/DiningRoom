@@ -31,16 +31,8 @@
 </div>
 
 <% if current_user.admin? || current_user.manager? %>
-    <% if current_user.admin? %>
-        <div class="col-md-12" style="text-align: center;margin-top: -10px;">
-          <% if current_user.permission?(:operate_basic_info_create) %>
-              <div class="col-md-3">
-                <%= link_to "上传/更新员工", send("import_#{@model.pluralize}_path"), :class => 'btn btn-primary', :style => 'width:200px;margin:10px 0 0 0;color:white;' %>
-              </div>
-          <% end %>
-        </div>
-    <% end %>
-    <div style="margin: 55px 0 0 0;">
+
+    <div style="margin: 0 0 0 0;">
       <hr>
       <form method="get" action="<%= send("search_#{@model.pluralize}_path") %>">
         <div style="text-align: center;">
@@ -59,6 +51,12 @@
           <div class="col-md-3">
             <input type="submit" value="查 找" style="width: 200px;" class="btn btn-primary"/>
           </div>
+
+          <% if current_user.admin?  %>
+              <div class="col-md-3">
+                <%= link_to "上传/更新员工", send("import_#{@model.pluralize}_path"), :class => 'btn btn-primary', :style => 'width:200px;color:white;' %>
+              </div>
+          <% end %>
         </div>
       </form>
     </div>

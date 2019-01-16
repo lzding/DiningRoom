@@ -51,14 +51,14 @@ module ApplicationHelper
 
       puts '----------------------------check--------------------------'
       puts v
-      puts v.class.eql?(Hash)
-      puts v.values.count
-      puts v.values.uniq
-      puts v.values.uniq!=['']
+      puts v.class
+      # puts v.values.count
+      # puts v.values.uniq
+      # puts v.values.uniq!=['']
       puts '----------------------------check- end -------------------------'
 
-      # if v.is_a?(Hash) && v.values.count==2 && v.values.uniq!=['']
-      if  v.values.count==2 && v.values.uniq!=['']
+      if v.is_a?(ActionController::Parameters) && v.values.count==2 && v.values.uniq!=['']
+      # if  v.values.count==2 && v.values.uniq!=['']
         values=v.values.sort
         # values[0]=Time.parse(values[0]).utc.to_s if values[0].is_date? & values[0].include?('-')
         values[0]=DateTime.parse(values[0]).to_s if values[0].is_date? & values[0].include?('-')
