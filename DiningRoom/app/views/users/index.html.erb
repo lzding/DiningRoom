@@ -1,0 +1,110 @@
+<style>
+    .IconA {
+        margin: 0 10px;
+        font-size: 1.2em;
+    }
+
+    .IconA:hover {
+        text-decoration: none;
+        background-color: white;
+    }
+
+    .table > thead > tr > th, .table > tbody > tr > td {
+        text-align: center;
+    }
+
+    a:hover, a:active {
+        text-decoration: none;
+        background-color: white;
+        color: black;
+        outline: none;
+    }
+</style>
+
+<div class="panel panel-default">
+  <ol class="breadcrumb" style="background: transparent;padding: 20px 0 0 20px;font-size: 1.2em;">
+    <li class="active">基础信息管理</li>
+    <li class="active">
+      员工
+    </li>
+  </ol>
+</div>
+
+<% if current_user.admin? || current_user.manager? %>
+    <% if current_user.admin? %>
+        <div class="col-md-12" style="text-align: center;margin-top: -10px;">
+          <% if current_user.permission?(:operate_basic_info_create) %>
+              <div class="col-md-3">
+                <%= link_to "上传/更新员工", send("import_#{@model.pluralize}_path"), :class => 'btn btn-primary', :style => 'width:200px;margin:10px 0 0 0;color:white;' %>
+              </div>
+          <% end %>
+        </div>
+    <% end %>
+    <div style="margin: 55px 0 0 0;">
+      <hr>
+      <form method="get" action="<%= send("search_#{@model.pluralize}_path") %>">
+        <div style="text-align: center;">
+          <div class="col-md-3">
+              <span>员工号：
+                <input type="text" name="user[nr]" value="<%= @nr %>"/>
+                <input type="hidden" name="user[nr_fuzzy]"/>
+              </span>
+          </div>
+
+          <div class="col-md-3">
+              <span>  角色：
+                <%= select_tag('user[role_id]', options_for_select(Role.menu, @role_id), include_blank: true) %>
+              </span>
+          </div>
+          <div class="col-md-3">
+            <input type="submit" value="查 找" style="width: 200px;" class="btn btn-primary"/>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-sm-12" style="margin-bottom: 20px;">
+      <div class="digg_pagination" style="margin-top: 10px;margin-bottom: 0;">
+        <div class="page_info">
+          <%= page_entries_info @users %>
+        </div>
+        <%= will_paginate @users, :container => false %>
+      </div>
+    </div>
+<% end %>
+
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>序号</th>
+    <th>工号</th>
+    <th>姓名</th>
+    <th>角色</th>
+    <th colspan="1">操作</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each_with_index do |user, index| %>
+      <tr>
+        <% if current_user.admin? || current_user.manager? || (current_user.id == user.id) %>
+            <td><%= index+@users.offset+1 %>
+            <td><%= user.nr %>
+            <td><%= user.name %>
+            <td><%= user.role %></td>
+            <td>
+              <% if current_user.admin? %>
+                  <a class="IconA" rel="nofollow" href="<%= user_path(user) %>" data-method="delete" data-confirm="Are you sure?" title="删除">
+                    <i class="glyphicon glyphicon-trash" style="color:darkred;"></i>
+                  </a>
+              <% end %>
+            </td>
+        <% end %>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<div class="digg_pagination">
+  <%= will_paginate @users, :container => false %>
+</div>
+<br></div>

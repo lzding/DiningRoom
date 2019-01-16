@@ -54,7 +54,7 @@
         </div>
         <%# if current_user.permission?(:operate_basic_info_create) %>
         <div class="col-sm-4">
-          <%= link_to "上传/更新菜单", send("import_#{@model.pluralize}_path"), :class => 'btn btn-primary', :style => 'width: 150px;color:white' %>
+          <%= link_to "上传菜单", send("import_#{@model.pluralize}_path"), :class => 'btn btn-primary', :style => 'width: 150px;color:white' %>
         </div>
         <%# end %>
       </div>
@@ -117,7 +117,7 @@
 
 <script>
     $(function () {
-        $(".datepicker").datetimepicker({
+        $(".datepicker").datepicker({
             lang: 'ch',
             format: 'Y-m-d'
         });

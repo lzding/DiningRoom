@@ -34,7 +34,13 @@ Rails.application.routes.draw do
              }
 
 
-
+  resources :users do
+    collection do
+      match :import, to: :import, via: [:get, :post]
+      get :template
+      get :search
+    end
+  end
 
 
 

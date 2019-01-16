@@ -1,12 +1,11 @@
-require 'active_support/core_ext/string/date'
 module FileHandler
   module Excel
-    class MenuHandler<Base
+    class UserHandler<Base
       IMPORT_HEADERS=[
-          :dinner_date, :dinner_type, :dish_one, :dish_two, :dish_three, :soup
+          :nr, :name, :role_id
       ]
 
-      def self.import(file, user)
+      def self.import(file)
         puts '---------------------------------------'
         puts file
         puts '---------------------------------------'
@@ -25,25 +24,23 @@ module FileHandler
                 IMPORT_HEADERS.each_with_index do |k, i|
                   row[k] = book.cell(line, i+1).to_s.strip
                 end
-                row[:dinner_date]=Date.parse(row[:dinner_date])
-                row[:dinner_type]=MenuType.find_type(row[:dinner_type])
+                row[:role_id]=Role.find_role_num(row[:role_id])
                 puts '---------------row-----------------'
                 puts row
 
-                menu = Menu.new({
-                                    dinner_date: row[:dinner_date],
-                                    dinner_type: row[:dinner_type],
-                                    dish_one: row[:dish_one],
-                                    dish_two: row[:dish_two],
-                                    dish_three: row[:dish_three],
-                                    soup: row[:soup]
+                menu = User.new({
+                                    nr: row[:nr],
+                                    name: row[:name],
+                                    role_id: row[:role_id],
+                                    password: '123456@',
+                                    password_confirmation: '123456@'
                                 })
 
                 menu.save
               end
             end
             msg.result = true
-            msg.content = "导入菜单成功"
+            msg.content = "导入员工信息成功"
           rescue => e
             puts e.backtrace
             msg.result = false
@@ -71,7 +68,6 @@ module FileHandler
             row = {}
             IMPORT_HEADERS.each_with_index do |k, i|
               row[k] = book.cell(line, i+1).to_s.strip
-              # row[k]=row[k].sub(/\.0/, '') if k== :user_id
             end
 
             unique_key = []
@@ -95,41 +91,33 @@ module FileHandler
 
       def self.validate_import_row(row, line, unique_key)
         msg = Message.new(contents: [])
-        if row[:dinner_date].present?
-          unless row[:dinner_date].is_date?
-            msg.contents << "日期:#{row[:dinner_date]} 不合法!"
-          end
-        else
-          msg.contents << "日期:#{row[:dinner_date]} 不能为空!"
+        if row[:nr].blank?
+          msg.contents << "工号:#{row[:nr]} 不能为空!"
         end
 
-        if row[:dinner_type].blank?
-          msg.contents << "菜单类型不能为空!"
+        if row[:name].blank?
+          msg.contents << "姓名:#{row[:name]} 不能为空!"
+        end
+
+        if row[:role_id].blank?
+          msg.contents << "角色不能为空!"
         else
-          if MenuType.find_type(row[:dinner_type]).blank?
-            msg.contents << "菜单类型不正确，请选择【午餐/晚餐】!"
+          if Role.find_role_num(row[:role_id]).blank?
+            msg.contents << "角色输入不正确，请选择【系统管理员/管理员/员工】!"
           end
         end
 
         #check uniq
         if msg.contents.size==0
-          unless Menu.where(dinner_date: Date.parse(row[:dinner_date]), dinner_type: MenuType.find_type(row[:dinner_type])).blank?
-            msg.contents << "该日期【#{row[:dinner_date]}】类型【#{row[:dinner_type]}】菜单已存在!"
+          unless User.where(nr: row[:nr]).blank?
+            msg.contents << "该工号【#{row[:nr]}】已存在!"
           else
-            if unique_key.include?("#{row[:dinner_date]}#{row[:dinner_type]}")
-              msg.contents << "该日期【#{row[:dinner_date]}】类型【#{row[:dinner_type]}】菜单已重复!"
+            if unique_key.include?("#{row[:nr]}")
+              msg.contents << "该工号【#{row[:nr]}】已重复!"
             else
-              unique_key<<"#{row[:dinner_date]}#{row[:dinner_type]}"
+              unique_key<<"#{row[:nr]}"
             end
           end
-        end
-
-        if row[:dish_one].blank?
-          msg.contents << "菜 1 不能为空!"
-        end
-
-        if row[:dish_two].blank?
-          msg.contents << "菜 2 不能为空!"
         end
 
         unless msg.result=(msg.contents.size==0)
@@ -137,6 +125,7 @@ module FileHandler
         end
         msg
       end
+
 
 
     end

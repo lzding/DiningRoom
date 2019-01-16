@@ -16,6 +16,13 @@
     </ul>
   </li>
 
+  <li>
+    <a href="#">管理 &nbsp;<i class="glyphicon glyphicon-chevron-down" style="font-size: .8em;color:black;"></i></a>
+    <ul>
+      <li id='user_li'><a href="<%= users_path %>">员工管理</a></li>
+    </ul>
+  </li>
+
 
   <li>
     <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>

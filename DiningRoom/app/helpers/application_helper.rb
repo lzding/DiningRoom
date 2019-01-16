@@ -1,3 +1,4 @@
+require 'active_support/core_ext/string/date'
 module ApplicationHelper
 
   def import
@@ -29,6 +30,8 @@ module ApplicationHelper
   #end
 
   def search
+    puts '-------------------search----------------------------'
+    puts params[@model]
     @condition=params[@model]
     query=model.all #.unscoped
     @condition.each do |k, v|
@@ -45,10 +48,22 @@ module ApplicationHelper
       #  query= v.size==1 ? query.where(Hash[k, v[0]]) : query.in(Hash[k, v]
       #end
       #query=query.where(Hash[k, v]) if v.is_a?(Range)
-      if v.is_a?(Hash) && v.values.count==2 && v.values.uniq!=['']
+
+      puts '----------------------------check--------------------------'
+      puts v
+      puts v.class.eql?(Hash)
+      puts v.values.count
+      puts v.values.uniq
+      puts v.values.uniq!=['']
+      puts '----------------------------check- end -------------------------'
+
+      # if v.is_a?(Hash) && v.values.count==2 && v.values.uniq!=['']
+      if  v.values.count==2 && v.values.uniq!=['']
         values=v.values.sort
-        values[0]=Time.parse(values[0]).utc.to_s if values[0].is_date? & values[0].include?('-')
-        values[1]=Time.parse(values[1]).utc.to_s if values[1].is_date? & values[1].include?('-')
+        # values[0]=Time.parse(values[0]).utc.to_s if values[0].is_date? & values[0].include?('-')
+        values[0]=DateTime.parse(values[0]).to_s if values[0].is_date? & values[0].include?('-')
+        # values[1]=Time.parse(values[1]).utc.to_s if values[1].is_date? & values[1].include?('-')
+        values[1]=DateTime.parse(values[1]).to_s if values[1].is_date? & values[1].include?('-')
         query=query.where(Hash[k, (values[0]..values[1])])
         v.each do |kk, vv|
           instance_variable_set("@#{k}_#{kk}", vv)

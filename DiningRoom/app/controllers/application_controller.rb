@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
 
 
   def configure_permitted_parametersod_name
-    devise_parameter_sanitizer.permit(:sign_in) {|u| u.permit(:email, :nr)}
-    devise_parameter_sanitizer.permit(:sign_up) {|u| u.permit(:email, :nr, :password, password_confirmation)}
+    devise_parameter_sanitizer.permit(:sign_in) {|u| u.permit(:nr)}
+    devise_parameter_sanitizer.permit(:sign_up) {|u| u.permit(:nr, :password, password_confirmation)}
   end
 
 

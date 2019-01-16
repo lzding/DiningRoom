@@ -39,9 +39,10 @@ ActiveRecord::Schema.define(version: 2019_01_15_072944) do
   end
 
   create_table "users", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "nr"
-    t.string "email", default: "", null: false
+    t.string "name", null: false
+    t.string "nr", null: false
+    t.string "email"
+    t.integer "role_id", default: 100, null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -53,7 +54,6 @@ ActiveRecord::Schema.define(version: 2019_01_15_072944) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["id"], name: "index_users_on_id"
     t.index ["nr"], name: "index_users_on_nr", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

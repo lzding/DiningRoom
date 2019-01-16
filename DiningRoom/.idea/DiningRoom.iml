@@ -120,8 +120,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="roo (v1.13.2, RVM: ruby-2.4.4) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="spreadsheet (v1.1.8, RVM: ruby-2.4.4) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />

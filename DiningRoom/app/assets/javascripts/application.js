@@ -16,5 +16,4 @@
 //= require jquery.datetimepicker
 //= require jquery.file.upload/jquery.fileupload
 //= require bootstrap.min
-//= require turbolinks
 //= require_tree .
