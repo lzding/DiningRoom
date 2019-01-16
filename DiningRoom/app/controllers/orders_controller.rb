@@ -4,7 +4,11 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.paginate(:page=> params[:page]).order(:user_id,:order_date)
+    condition = {}
+    unless current_user.admin?
+      condition[:user_id] = current_user.id
+    end
+    @orders = Order.where(condition).paginate(:page=> params[:page]).order(:user_id,:order_date)
   end
 
   # GET /orders/1
@@ -76,6 +80,17 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
 
+  end
+
+
+  def search
+    super { |query|
+      unless current_user.admin?
+        query=query.where(user_id: current_user.id)
+      end
+
+      query
+    }
   end
 
 

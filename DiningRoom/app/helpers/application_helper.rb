@@ -40,7 +40,11 @@ module ApplicationHelper
         if @condition.has_key?(k+'_fuzzy')
           query=query.where("#{k} like ?", "%#{v}%")
         else
-          query=query.where(Hash[k, v])
+          if(v.is_date?)
+            query=query.where(Hash[k, Time.parse(v).utc])
+          else
+            query=query.where(Hash[k, v])
+          end
         end
         instance_variable_set("@#{k}", v)
       end
