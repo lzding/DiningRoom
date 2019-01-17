@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.paginate(:page => params[:page])
+    if current_user.admin? || current_user.manager?
+      @users = User.paginate(:page => params[:page])
+    else
+      @users = User.where(id: current_user.id).paginate(:page => params[:page])
+    end
   end
 
   # POST /users

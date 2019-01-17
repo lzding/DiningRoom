@@ -78,7 +78,7 @@
     <th>工号</th>
     <th>姓名</th>
     <th>角色</th>
-    <th colspan="1">操作</th>
+    <th colspan="2">操作</th>
   </tr>
   </thead>
 
@@ -91,7 +91,7 @@
             <td><%= user.name %>
             <td><%= user.role %></td>
             <td>
-
+              <a href="<%= edit_user_path(user) %>" class="IconA" title="编辑"><i class="glyphicon glyphicon-pencil" style="color:#4F94CD;"></i></a>
 
               <% if current_user.admin? %>
                   <a class="IconA" rel="nofollow" href="<%= user_path(user) %>" data-method="delete" data-confirm="Are you sure?" title="删除">

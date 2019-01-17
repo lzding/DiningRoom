@@ -83,9 +83,8 @@
               </div>
 
               <div class="panel-body" style="padding-top: 40px;padding-bottom: 30px;">
-                <div class="col-md-4" style="display: flex;">
 
-                <div class="col-md-4" style="display: flex;">
+                <div class="col-md-6" style="display: flex;">
                   <%= f.label :role_id, '角色' %>
 
                   <% if current_user.admin? || current_user.manager? %>
@@ -97,6 +96,7 @@
 
               </div>
             </div>
+
           </div>
 
         </div>
