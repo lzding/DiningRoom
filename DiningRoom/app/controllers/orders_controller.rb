@@ -69,14 +69,12 @@ class OrdersController < ApplicationController
   # POST /pick order
   # POST /orders.json
   def pick
-    puts "--------------------------------------------------"
-    puts current_user
-    puts "--------------------------------------------------"
     order = OrderService.pick_order(current_user)
-    # @orders = Order.all
+    notice = 'Order was successfully picked.'
+    notice = '' if order.blank?
 
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully picked.' }
+      format.html { redirect_to orders_url, notice: notice }
       format.json { head :no_content }
     end
 

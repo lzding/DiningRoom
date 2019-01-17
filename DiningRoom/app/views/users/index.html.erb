@@ -23,9 +23,9 @@
 
 <div class="panel panel-default">
   <ol class="breadcrumb" style="background: transparent;padding: 20px 0 0 20px;font-size: 1.2em;">
-    <li class="active">基础信息管理</li>
+    <li class="active">管理</li>
     <li class="active">
-      员工
+      员工管理
     </li>
   </ol>
 </div>
@@ -91,12 +91,15 @@
             <td><%= user.name %>
             <td><%= user.role %></td>
             <td>
+
+
               <% if current_user.admin? %>
                   <a class="IconA" rel="nofollow" href="<%= user_path(user) %>" data-method="delete" data-confirm="Are you sure?" title="删除">
                     <i class="glyphicon glyphicon-trash" style="color:darkred;"></i>
                   </a>
               <% end %>
             </td>
+
         <% end %>
       </tr>
   <% end %>
