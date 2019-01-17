@@ -24,8 +24,9 @@
 <div class="panel panel-default">
   <ol class="breadcrumb" style="background: transparent;padding: 20px 0 0 20px;font-size: 1.2em;">
     <li class="active">管理</li>
-    <li class="active">
-      员工管理
+
+    <li>
+      <a href="/users">员工管理</a>
     </li>
   </ol>
 </div>
@@ -36,25 +37,29 @@
       <hr>
       <form method="get" action="<%= send("search_#{@model.pluralize}_path") %>">
         <div style="text-align: center;">
-          <div class="col-md-3">
+          <div class="col-md-2">
               <span>员工号：
                 <input type="text" name="user[nr]" value="<%= @nr %>"/>
                 <input type="hidden" name="user[nr_fuzzy]"/>
               </span>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-md-2">
               <span>  角色：
                 <%= select_tag('user[role_id]', options_for_select(Role.menu, @role_id), include_blank: true) %>
               </span>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <input type="submit" value="查 找" style="width: 200px;" class="btn btn-primary"/>
           </div>
 
           <% if current_user.admin?  %>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <%= link_to "上传/更新员工", send("import_#{@model.pluralize}_path"), :class => 'btn btn-primary', :style => 'width:200px;color:white;' %>
+              </div>
+
+              <div class="col-md-2">
+                <%= link_to "新建员工", send("new_#{@model}_path"), :class => 'btn btn-primary', :style => 'width:200px; color:white;' %>
               </div>
           <% end %>
         </div>

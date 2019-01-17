@@ -30,7 +30,7 @@
   <ol class="breadcrumb" style="background: transparent;padding: 20px 0 0 20px;font-size: 1.2em;">
     <li class="active">订餐管理</li>
     <li class="active">
-      订餐记录
+      <a href="/orders">订餐记录</a>
     </li>
   </ol>
 </div>
@@ -92,6 +92,7 @@
     <th>工号</th>
     <th>姓名</th>
     <th>状态</th>
+    <th colspan="2">操作</th>
   </tr>
   </thead>
 
@@ -103,6 +104,11 @@
         <td><%= order.user.nr %></td>
         <td><%= order.user.name %></td>
         <td><%= OrderState.display(order.status) %></td>
+        <td>
+          <a class="IconA" rel="nofollow" href="<%= order_path(order) %>" data-method="delete" data-confirm="Are you sure?" title="删除">
+            <i class="glyphicon glyphicon-trash" style="color:darkred;"></i>
+          </a>
+        </td>
       </tr>
   <% end %>
   </tbody>

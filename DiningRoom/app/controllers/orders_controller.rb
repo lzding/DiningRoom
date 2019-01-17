@@ -58,9 +58,15 @@ class OrdersController < ApplicationController
   # DELETE /orders/1
   # DELETE /orders/1.json
   def destroy
-    @order.destroy
+    if Time.now < Time.parse("#{@order.order_date.localtime.strftime('%Y-%m-%d')} #{$pick_order_time_limit}")
+      @order.destroy
+      notice = 'Order was successfully destroyed.'
+    else
+      notice = 'Exceed the time limit, Can not cancel.'
+    end
+
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to orders_url, notice: notice }
       format.json { head :no_content }
     end
   end

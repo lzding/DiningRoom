@@ -34,7 +34,7 @@
   <ol class="breadcrumb" style="background: transparent;padding: 20px 0 0 20px;font-size: 1.2em;">
     <li class="active">订餐管理</li>
     <li class="active">
-      本周菜单
+      <a href="/menus">本周菜单</a>
     </li>
   </ol>
 </div>
@@ -101,9 +101,9 @@
           <%# if current_user.permission?(:operate_basic_info_edit) %>
               <%#= link_to content_tag(:i, '', :class => 'glyphicon glyphicon-pencil', :style => 'color:#4F94CD;'), edit_menu_path(menu), :class => 'IconA', :title => '编辑' %>
           <%# end %>
-          <%# if current_user.permission?(:operate_basic_info_delete) %>
+          <% if current_user.admin? || current_user.manager? %>
               <%= link_to content_tag(:i, '', :class => 'glyphicon glyphicon-trash', :style => 'color:darkred;'), menu, method: :delete, data: {confirm: '确认删除?'}, :class => 'IconA', :title => '删除' %>
-          <%# end %>
+          <% end %>
         </td>
       </tr>
   <% end %>
