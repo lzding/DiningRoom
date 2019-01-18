@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+
+
+  resources :attendance_notes do
+    collection do
+      get :search
+    end
+  end
+
   resources :files do
     collection do
       get :download

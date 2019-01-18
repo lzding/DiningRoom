@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_15_072944) do
+ActiveRecord::Schema.define(version: 2019_01_17_124751) do
+
+  create_table "attendance_notes", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "work_date"
+    t.integer "status"
+    t.datetime "on_duty_time"
+    t.datetime "off_duty_time"
+    t.datetime "fill_clock_time"
+    t.integer "fill_clock_type"
+    t.string "remark"
+    t.integer "over_times"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "fill_clock_mark_time"
+    t.index ["fill_clock_type"], name: "index_attendance_notes_on_fill_clock_type"
+    t.index ["status"], name: "index_attendance_notes_on_status"
+    t.index ["user_id"], name: "index_attendance_notes_on_user_id"
+    t.index ["work_date"], name: "index_attendance_notes_on_work_date"
+  end
 
   create_table "menus", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "dinner_date"

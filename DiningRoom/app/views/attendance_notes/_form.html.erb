@@ -1,0 +1,62 @@
+<%= form_with(model: attendance_note, local: true) do |form| %>
+  <% if attendance_note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(attendance_note.errors.count, "error") %> prohibited this attendance_note from being saved:</h2>
+
+      <ul>
+      <% attendance_note.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :work_date %>
+    <%= form.datetime_select :work_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.number_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :on_duty_time %>
+    <%= form.datetime_select :on_duty_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :off_duty_time %>
+    <%= form.datetime_select :off_duty_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fill_clock_time %>
+    <%= form.datetime_select :fill_clock_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fill_clock_type %>
+    <%= form.number_field :fill_clock_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remark %>
+    <%= form.text_field :remark %>
+  </div>
+
+  <div class="field">
+    <%= form.label :over_times %>
+    <%= form.number_field :over_times %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

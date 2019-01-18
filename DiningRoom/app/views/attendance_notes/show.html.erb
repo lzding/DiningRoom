@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @attendance_note.user %>
+</p>
+
+<p>
+  <strong>Work date:</strong>
+  <%= @attendance_note.work_date %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @attendance_note.status %>
+</p>
+
+<p>
+  <strong>On duty time:</strong>
+  <%= @attendance_note.on_duty_time %>
+</p>
+
+<p>
+  <strong>Off duty time:</strong>
+  <%= @attendance_note.off_duty_time %>
+</p>
+
+<p>
+  <strong>Fill clock time:</strong>
+  <%= @attendance_note.fill_clock_time %>
+</p>
+
+<p>
+  <strong>Fill clock type:</strong>
+  <%= @attendance_note.fill_clock_type %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @attendance_note.remark %>
+</p>
+
+<p>
+  <strong>Over times:</strong>
+  <%= @attendance_note.over_times %>
+</p>
+
+<%= link_to 'Edit', edit_attendance_note_path(@attendance_note) %> |
+<%= link_to 'Back', attendance_notes_path %>

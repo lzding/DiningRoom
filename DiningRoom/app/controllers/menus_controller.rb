@@ -4,7 +4,7 @@ class MenusController < ApplicationController
   # GET /menus
   # GET /menus.json
   def index
-    @menus = Menu.where(dinner_date: Time.now.at_beginning_of_week...Time.now.at_end_of_week).paginate(:page=> params[:page]).order(dinner_date: :ASC)
+    @menus = Menu.where(dinner_date: Time.now.at_beginning_of_week...Time.now.at_end_of_week).paginate(:page=> params[:page]).order(dinner_date: :ASC, dinner_type: :ASC)
   end
 
   # GET /menus/1

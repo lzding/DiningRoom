@@ -16,6 +16,16 @@
     </ul>
   </li>
 
+
+  <li><a href="#">考勤管理 &nbsp;<i class="glyphicon glyphicon-chevron-down" style="font-size: .8em;color:black;"></i></a>
+    <ul>
+      <%# if current_user.permission?(:view_report) %>
+      <li><a href="<%= attendance_notes_path %>">考勤记录</a></li>
+      <%# end %>
+    </ul>
+  </li>
+
+
   <li>
     <a href="#">管理 &nbsp;<i class="glyphicon glyphicon-chevron-down" style="font-size: .8em;color:black;"></i></a>
     <ul>
