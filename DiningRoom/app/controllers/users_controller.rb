@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    if current_user.admin? || current_user.manager?
+    if current_user.admin?
       @users = User.paginate(:page => params[:page])
+    elsif current_user.manager?
+      @users = User.without_admin.paginate(:page => params[:page])
     else
       @users = User.where(id: current_user.id).paginate(:page => params[:page])
     end

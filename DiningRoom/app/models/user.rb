@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   default_scope { order(nr: :ASC) }
 
+  scope :without_admin, -> { where.not(role_id: Role.admin) }
+
   has_many :user_permission_groups, dependent: :destroy
   has_many :permission_groups, through: :user_permission_groups
   has_many :permissions, through: :permission_groups

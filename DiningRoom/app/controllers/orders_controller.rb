@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     unless current_user.admin? || current_user.manager?
       condition[:user_id] = current_user.id
     end
-    @orders = Order.where(condition).paginate(:page=> params[:page]).order(:user_id,:order_date)
+    @orders = Order.where(condition).paginate(:page=> params[:page]).order(user_nr: :ASC, order_date: :DESC)
   end
 
   # GET /orders/1
