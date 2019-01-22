@@ -20,7 +20,7 @@ class Order < ApplicationRecord
       orders.each_with_index do |order, index|
         sheet.add_row [
                           index+1,
-                          order.order_date,
+                          order.order_date.localtime.strftime('%Y-%m-%d'),
                           order.user.nr,
                           order.user.name,
                           OrderState.display(order.status)

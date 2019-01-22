@@ -24,7 +24,7 @@ class AttendanceNoteState
       when ON_DUTY
         '工作中'
       when OFF_DUTY
-        '已下半'
+        '已下班'
       when FILL_CLOCK
         '补打卡'
     end

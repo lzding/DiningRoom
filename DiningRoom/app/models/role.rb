@@ -3,7 +3,7 @@ class Role
 
   @@roles={
       :'100' => {:name => 'admin', :display => '系统管理员'},
-      :'200' => {:name => 'manager', :display => '管理者'},
+      :'200' => {:name => 'manager', :display => '管理员'},
       :'300' => {:name => 'worker', :display => '员工'},
   }
 
@@ -32,10 +32,14 @@ class Role
     id.to_s.to_sym
   end
 
-  def self.menu
+  def self.menu with_no_admin=true
     roles = []
     @@roles.each { |key, value|
-      roles <<[value[:display], key.to_s]
+      if with_no_admin
+        roles <<[value[:display], key.to_s] unless key.to_s==self.admin.to_s
+      else
+        roles <<[value[:display], key.to_s]
+      end
     }
     roles
   end
@@ -44,7 +48,7 @@ class Role
     case str
       when '系统管理员'
         self.admin
-      when '管理者'
+      when '管理员'
         self.manager
       when '员工'
         self.worker

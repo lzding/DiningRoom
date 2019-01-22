@@ -89,6 +89,26 @@ class UsersController < ApplicationController
     end
   end
 
+  def permission_groups
+    if request.post?
+      pg_ids=[]
+      params[:permission_groups_data].each do |p|
+        if p.last[:status]=='true'
+          pg_ids<<p.last[:id].to_i
+        end
+      end
+
+      @user=User.find_by_id(params[:user_id])
+      @user.manage_permission_groups(pg_ids)
+      @permission_groups=@user.permission_group_details
+
+      render :permission_groups
+    else
+      @user=User.find_by_id(params["format"])
+      @permission_groups=@user.permission_group_details
+    end
+  end
+
 
   private
   # Use callbacks to share common setup or constraints between actions.

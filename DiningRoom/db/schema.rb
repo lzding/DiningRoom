@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_17_124751) do
+ActiveRecord::Schema.define(version: 2019_01_22_024648) do
 
   create_table "attendance_notes", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
+    t.string "user_id"
     t.datetime "work_date"
     t.integer "status"
     t.datetime "on_duty_time"
@@ -57,6 +57,38 @@ ActiveRecord::Schema.define(version: 2019_01_17_124751) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "permission_group_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "permission_id"
+    t.bigint "permission_group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["permission_group_id"], name: "index_permission_group_items_on_permission_group_id"
+    t.index ["permission_id"], name: "index_permission_group_items_on_permission_id"
+  end
+
+  create_table "permission_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "permissions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_permission_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "user_id"
+    t.bigint "permission_group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["permission_group_id"], name: "index_user_permission_groups_on_permission_group_id"
+    t.index ["user_id"], name: "index_user_permission_groups_on_user_id"
+  end
+
   create_table "users", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "nr", null: false
@@ -78,4 +110,6 @@ ActiveRecord::Schema.define(version: 2019_01_17_124751) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "permission_group_items", "permission_groups"
+  add_foreign_key "permission_group_items", "permissions"
 end

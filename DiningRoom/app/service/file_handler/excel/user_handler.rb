@@ -25,8 +25,7 @@ module FileHandler
                   row[k] = book.cell(line, i+1).to_s.strip
                 end
                 row[:role_id]=Role.find_role_num(row[:role_id])
-                puts '---------------row-----------------'
-                puts row
+                row[:role_id]=Role.manager if row[:role_id]==Role.admin
 
                 menu = User.new({
                                     nr: row[:nr],

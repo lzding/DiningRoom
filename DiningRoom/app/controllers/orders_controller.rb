@@ -5,7 +5,9 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     condition = {}
-    unless current_user.admin?
+    @order_date = Time.now.at_beginning_of_day.strftime('%Y-%m-%d')
+    condition[:order_date] = Time.now.at_beginning_of_day.utc
+    unless current_user.admin? || current_user.manager?
       condition[:user_id] = current_user.id
     end
     @orders = Order.where(condition).paginate(:page=> params[:page]).order(:user_id,:order_date)
@@ -89,7 +91,7 @@ class OrdersController < ApplicationController
 
   def search
     super { |query|
-      unless current_user.admin?
+      unless current_user.admin? || current_user.manager?
         query=query.where(user_id: current_user.id)
       end
 

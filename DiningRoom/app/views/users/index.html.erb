@@ -53,15 +53,13 @@
             <input type="submit" value="查 找" style="width: 200px;" class="btn btn-primary"/>
           </div>
 
-          <% if current_user.admin?  %>
-              <div class="col-md-2">
-                <%= link_to "上传/更新员工", send("import_#{@model.pluralize}_path"), :class => 'btn btn-primary', :style => 'width:200px;color:white;' %>
-              </div>
+          <div class="col-md-2">
+            <%= link_to "上传/更新员工", send("import_#{@model.pluralize}_path"), :class => 'btn btn-primary', :style => 'width:200px;color:white;' %>
+          </div>
 
-              <div class="col-md-2">
-                <%= link_to "新建员工", send("new_#{@model}_path"), :class => 'btn btn-primary', :style => 'width:200px; color:white;' %>
-              </div>
-          <% end %>
+          <div class="col-md-2">
+            <%= link_to "新建员工", send("new_#{@model}_path"), :class => 'btn btn-primary', :style => 'width:200px; color:white;' %>
+          </div>
         </div>
       </form>
     </div>
@@ -98,9 +96,15 @@
             <td>
               <a href="<%= edit_user_path(user) %>" class="IconA" title="编辑"><i class="glyphicon glyphicon-pencil" style="color:#4F94CD;"></i></a>
 
-              <% if current_user.admin? %>
+              <% if current_user.admin? || current_user.manager? %>
                   <a class="IconA" rel="nofollow" href="<%= user_path(user) %>" data-method="delete" data-confirm="Are you sure?" title="删除">
                     <i class="glyphicon glyphicon-trash" style="color:darkred;"></i>
+                  </a>
+              <% end %>
+
+              <% if current_user.permission?(:manage_permission) %>
+                  <a href="<%= permission_groups_users_path(user) %>" class="IconA" title="权限">
+                    <i class="glyphicon glyphicon-lock" style="color:#000;"></i>
                   </a>
               <% end %>
             </td>

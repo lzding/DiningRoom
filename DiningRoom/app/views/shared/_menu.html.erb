@@ -9,28 +9,34 @@
 
   <li><a href="#">订餐管理 &nbsp;<i class="glyphicon glyphicon-chevron-down" style="font-size: .8em;color:black;"></i></a>
     <ul>
-      <%# if current_user.permission?(:view_report) %>
+      <%# if current_user.permission?(:view_) %>
           <li><a href="<%= orders_path %>">订餐记录</a></li>
           <li><a href="<%= menus_path %>">本周菜单</a></li>
       <%# end %>
     </ul>
   </li>
 
-
-  <li><a href="#">考勤管理 &nbsp;<i class="glyphicon glyphicon-chevron-down" style="font-size: .8em;color:black;"></i></a>
-    <ul>
-      <%# if current_user.permission?(:view_report) %>
-      <li><a href="<%= attendance_notes_path %>">考勤记录</a></li>
-      <%# end %>
-    </ul>
-  </li>
+  <% if current_user.permission?(:view_attendance_note) %>
+      <li><a href="#">考勤管理 &nbsp;<i class="glyphicon glyphicon-chevron-down" style="font-size: .8em;color:black;"></i></a>
+        <ul>
+          <li><a href="<%= attendance_notes_path %>">考勤记录</a></li>
+        </ul>
+      </li>
+  <% end %>
 
 
   <li>
     <a href="#">管理 &nbsp;<i class="glyphicon glyphicon-chevron-down" style="font-size: .8em;color:black;"></i></a>
     <ul>
       <li id='user_li'><a href="<%= users_path %>">员工管理</a></li>
+
+      <% if current_user.permission?(:manage_permission) %>
+          <li class="divider"></li>
+          <li id='led_li'><a href="<%= permissions_path %>">权限列表</a></li>
+          <li id='led_li'><a href="<%= permission_groups_path %>">权限分组</a></li>
+      <% end %>
     </ul>
+
   </li>
 
 
