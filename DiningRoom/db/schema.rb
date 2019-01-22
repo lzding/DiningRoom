@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_024648) do
+ActiveRecord::Schema.define(version: 2019_01_22_081434) do
 
   create_table "attendance_notes", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_id"
@@ -51,10 +51,12 @@ ActiveRecord::Schema.define(version: 2019_01_22_024648) do
     t.string "pick_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_nr", null: false
     t.index ["order_date"], name: "index_orders_on_order_date"
     t.index ["pick_user_id"], name: "index_orders_on_pick_user_id"
     t.index ["status"], name: "index_orders_on_status"
     t.index ["user_id"], name: "index_orders_on_user_id"
+    t.index ["user_nr"], name: "index_orders_on_user_nr"
   end
 
   create_table "permission_group_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

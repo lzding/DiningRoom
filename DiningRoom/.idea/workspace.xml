@@ -2,6 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0b3c4de-cd9f-4c44-98ea-64f9e4f904b1" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/uploadfiles/tmp/20190116192541653~import_user_info_template (10).xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/uploadfiles/tmp/20190116192542142-import_user_info_template (10).xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/uploadfiles/tmp/20190117100332707~import_menus_template (3).xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/uploadfiles/tmp/20190117100333162-import_menus_template (3).xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/uploadfiles/tmp/20190122102412962~import_user_info_template (11).xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/uploadfiles/tmp/20190122102413183-import_user_info_template (11).xlsx" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/Analytic-chosen-sprite.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/Analytic-chosen-sprite@2x.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/rails.png" />
@@ -19,47 +25,109 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/ui-icons_ef8c08_256x240.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/ui-icons_ffd27a_256x240.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/ui-icons_ffffff_256x240.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190117122520_create_attendance_notes.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190117124751_add_fill_clock_mark_time_to_attendance_note.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190118015607_change_attendance_note_user_id.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190122024122_create_permission_groups.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190122024257_create_permissions.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190122024443_create_user_permission_groups.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190122024522_change_user_permission_group_user_id.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20190122024648_create_permission_group_items.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/attendance_notes/_attendance_note.json.jbuilder" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/attendance_notes/_form.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_group_items/_form.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_groups/_form.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permissions/_form.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user_permission_groups/_form.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/_form.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_groups/add_permissions.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/attendance_note.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/state/attendance_note_state.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/attendance_note_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/attendance_notes.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/attendance_notes.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/attendance_notes.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/attendance_notes_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/controllers/attendance_notes_controller_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/attendance_notes_helper.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/system/attendance_notes_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/attendance_notes/edit.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_group_items/edit.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_groups/edit.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permissions/edit.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user_permission_groups/edit.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/edit.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/type/fill_clock_type.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/attendance_notes/index.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_group_items/index.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_groups/index.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permissions/index.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user_permission_groups/index.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/attendance_notes/index.json.jbuilder" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_group_items/index.json.jbuilder" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_groups/index.json.jbuilder" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permissions/index.json.jbuilder" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user_permission_groups/index.json.jbuilder" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/init/init_attendance_note.rake" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/script/init/init_permission_data.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/attendance_notes/new.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_group_items/new.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_groups/new.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permissions/new.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user_permission_groups/new.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/permission.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/permission_group.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/permission_group_item.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/permission_group_item_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/permission_group_items.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/permission_group_items.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/permission_group_items.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/permission_group_items_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/controllers/permission_group_items_controller_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/permission_group_items_helper.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/system/permission_group_items_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/permission_group_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/permission_groups.coffee" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/permission_groups.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/permission_groups.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/permission_groups.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/permission_groups_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/controllers/permission_groups_controller_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/permission_groups_helper.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/system/permission_groups_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/permission_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/permissions.coffee" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/permissions.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/permissions.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/permissions.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/permissions_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/controllers/permissions_controller_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/permissions_helper.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/system/permissions_test.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/popModal/popModal.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/tasks/db/recreate.rake" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/schedule.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/attendance_notes/show.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_group_items/show.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_groups/show.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permissions/show.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user_permission_groups/show.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/attendance_notes/show.json.jbuilder" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_group_items/show.json.jbuilder" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permission_groups/show.json.jbuilder" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/permissions/show.json.jbuilder" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user_permission_groups/show.json.jbuilder" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/user_permission_group.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/models/user_permission_group_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/user_permission_groups.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/user_permission_groups.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/user_permission_groups.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/user_permission_groups_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/controllers/user_permission_groups_controller_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/user_permission_groups_helper.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/system/user_permission_groups_test.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/uploadfiles/template/import_user_info_template.xlsx" afterPath="$PROJECT_DIR$/app/uploadfiles/template/import_user_info_template.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
@@ -123,8 +191,8 @@
       <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
-              <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1560">
+              <caret line="85" column="22" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -133,18 +201,20 @@
       <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-43.75" vertical-offset="0" max-vertical-offset="1890">
-              <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
-              <folding />
+            <state vertical-scroll-proportion="-19.708334" vertical-offset="967" max-vertical-offset="1980">
+              <caret line="96" column="41" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="41" />
+              <folding>
+                <element signature="n#style#0;n#i#0;n#a#1;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/orders/index.html.erb">
+      <file leaf-file-name="users_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.75" vertical-offset="270" max-vertical-offset="2190">
-              <caret line="48" column="93" selection-start-line="48" selection-start-column="83" selection-end-line="48" selection-end-column="93" />
+            <state vertical-scroll-proportion="-14.472222" vertical-offset="1219" max-vertical-offset="2130">
+              <caret line="116" column="49" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -153,18 +223,8 @@
       <file leaf-file-name="orders_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/orders_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12671594" vertical-offset="0" max-vertical-offset="1785">
-              <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/order.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
-              <caret line="22" column="73" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.42977825" vertical-offset="793" max-vertical-offset="1785">
+              <caret line="80" column="30" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -173,8 +233,8 @@
       <file leaf-file-name="order_service.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/service/order_service.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-              <caret line="9" column="76" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -188,7 +248,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/service/file_handler/excel/menu_handler.rb" />
         <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/users/edit.html.erb" />
@@ -202,7 +261,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20190117121048_create_attendance_notes.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190117122520_create_attendance_notes.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190117124751_add_fill_clock_mark_time_to_attendance_note.rb" />
-        <option value="$PROJECT_DIR$/app/service/order_service.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190118015607_change_attendance_note_user_id.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/init/init_attendance_note.rake" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
@@ -220,7 +278,6 @@
         <option value="$PROJECT_DIR$/app/models/permission.rb" />
         <option value="$PROJECT_DIR$/app/controllers/permissions_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/permission_groups_controller.rb" />
-        <option value="$PROJECT_DIR$/script/init/init_permission_data.rb" />
         <option value="$PROJECT_DIR$/app/views/permissions/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/permissions/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/permission_groups/add_permissions.html.erb" />
@@ -229,15 +286,18 @@
         <option value="$PROJECT_DIR$/app/views/permission_groups/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/permissions/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/permissions/show.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/users/permission_groups.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/permissions.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_menu.html.erb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/views/attendance_notes/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/attendance_notes_controller.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20190122081434_add_user_nr_to_order.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/service/order_service.rb" />
         <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
+        <option value="$PROJECT_DIR$/script/init/init_permission_data.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/orders_controller.rb" />
       </list>
     </option>
@@ -336,152 +396,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="attendance_notes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="file_handler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="file_handler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DiningRoom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -738,14 +652,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/state/attendance_note_state.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4276663" vertical-offset="0" max-vertical-offset="947">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="1695">
@@ -1050,21 +956,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/init/init_permission_data.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="2" column="52" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/_menu.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="780">
           <caret line="18" column="54" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="54" />
           <folding>
-            <element signature="n#style#0;n#i#0;n#a#0;n#li#1;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#a#0;n#li#2;n#ul#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#li#1;n#ul#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1108,22 +1005,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1500">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="1935">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/attendance_notes_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15839493" vertical-offset="0" max-vertical-offset="2325">
@@ -1132,42 +1013,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20190122081434_add_user_nr_to_order.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-43.75" vertical-offset="0" max-vertical-offset="1890">
-          <caret line="70" column="14" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.07919747" vertical-offset="0" max-vertical-offset="947">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/orders/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.75" vertical-offset="270" max-vertical-offset="2190">
+        <state vertical-scroll-proportion="0.48754063" vertical-offset="270" max-vertical-offset="2190">
           <caret line="48" column="93" selection-start-line="48" selection-start-column="83" selection-end-line="48" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/service/order_service.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <caret line="9" column="76" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/order.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+        <state vertical-scroll-proportion="0.34846884" vertical-offset="0" max-vertical-offset="947">
           <caret line="22" column="73" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1560">
+          <caret line="85" column="22" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/order_service.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/init/init_permission_data.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4276663" vertical-offset="0" max-vertical-offset="947">
+          <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.708334" vertical-offset="967" max-vertical-offset="1980">
+          <caret line="96" column="41" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#a#1;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.472222" vertical-offset="1219" max-vertical-offset="2130">
+          <caret line="116" column="49" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/orders_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12671594" vertical-offset="0" max-vertical-offset="1785">
-          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.42977825" vertical-offset="793" max-vertical-offset="1785">
+          <caret line="80" column="30" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
           <folding />
         </state>
       </provider>

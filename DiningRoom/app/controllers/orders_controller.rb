@@ -79,7 +79,7 @@ class OrdersController < ApplicationController
   def pick
     order = OrderService.pick_order(current_user)
     notice = 'Order was successfully picked.'
-    notice = '' if order.blank?
+    notice = "It's past the latest booking time." if order.blank?
 
     respond_to do |format|
       format.html { redirect_to orders_url, notice: notice }
@@ -108,6 +108,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:user, :order_date, :status, :pick_user_id)
+      params.require(:order).permit(:user, :order_date, :status, :pick_user_id, :user_nr)
     end
 end

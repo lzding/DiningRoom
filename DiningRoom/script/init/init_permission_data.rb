@@ -24,5 +24,9 @@ unless Permission.find_by_name("operate_basic_info_delete")
   Permission.create(name: "operate_basic_info_delete", description: "基础信息删除权限")
 end
 
+unless Permission.find_by_name("operate_pick_order_by_manager")
+  Permission.create(name: "operate_pick_order_by_manager", description: "管理员代订餐权限")
+end
+
 
 

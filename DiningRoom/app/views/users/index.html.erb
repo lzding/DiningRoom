@@ -81,7 +81,7 @@
     <th>工号</th>
     <th>姓名</th>
     <th>角色</th>
-    <th colspan="2">操作</th>
+    <th colspan="3">操作</th>
   </tr>
   </thead>
 
@@ -105,6 +105,12 @@
               <% if current_user.permission?(:manage_permission) %>
                   <a href="<%= permission_groups_users_path(user) %>" class="IconA" title="权限">
                     <i class="glyphicon glyphicon-lock" style="color:#000;"></i>
+                  </a>
+              <% end %>
+
+              <% if current_user.permission?(:operate_pick_order_by_manager) %>
+                  <a href="<%= pick_order_user_path(user) %>" data-method="post" data-confirm="Are you sure?" class="IconA" title="订餐">
+                    <i class="glyphicon glyphicon-cutlery" style="color:#000;"></i>
                   </a>
               <% end %>
             </td>

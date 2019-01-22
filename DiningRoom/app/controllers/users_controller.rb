@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :move]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :pick_order]
 
 
 
@@ -106,6 +106,19 @@ class UsersController < ApplicationController
     else
       @user=User.find_by_id(params["format"])
       @permission_groups=@user.permission_group_details
+    end
+  end
+
+  def pick_order
+    puts '---------------------------------pick_order------------------------------------'
+    puts @user
+    order = OrderService.pick_order(@user)
+    notice = "#{@user.nr} Order was successfully picked."
+    notice = "It's past the latest booking time." if order.blank?
+
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: notice }
+      format.json { head :no_content }
     end
   end
 

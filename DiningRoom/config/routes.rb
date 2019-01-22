@@ -81,6 +81,10 @@ Rails.application.routes.draw do
       get :search
       match :permission_groups, to: :permission_groups, via: [:get, :post]
     end
+
+    member do
+      post :pick_order
+    end
   end
 
 

@@ -7,6 +7,7 @@ class OrderService
     if order.blank? && Time.now<Time.parse($pick_order_time_limit)
       order = Order.create({
                                user_id: user.id,
+                               user_nr: user.nr,
                                order_date: DateTime.now.at_beginning_of_day,
                                status: OrderState::ORDERED
                            })
