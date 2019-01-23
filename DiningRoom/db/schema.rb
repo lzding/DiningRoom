@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_081434) do
+ActiveRecord::Schema.define(version: 2019_01_23_054636) do
 
   create_table "attendance_notes", id: :string, limit: 36, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "user_id"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_01_22_081434) do
     t.datetime "fill_clock_time"
     t.integer "fill_clock_type"
     t.string "remark"
-    t.integer "over_times"
+    t.decimal "over_times", precision: 20, scale: 4, default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "fill_clock_mark_time"

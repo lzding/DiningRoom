@@ -82,7 +82,11 @@ class AttendanceNotesController < ApplicationController
 
   def clock_out
     if @attendance_note.status==AttendanceNoteState::ON_DUTY && @attendance_note.work_date.localtime.day==Time.now.localtime.day
-      @attendance_note.update({off_duty_time: Time.now, status: AttendanceNoteState::ON_DUTY})
+      @attendance_note.update({
+                                  off_duty_time: Time.now,
+                                  status: AttendanceNoteState::OFF_DUTY,
+                                  over_times: @attendance_note.calc_over_times
+                              })
       notice = 'Clock Out successfully.'
     else
       notice = 'Clock Out Date is not right, Please check it Or Press Fill Clock Btn.'
@@ -100,17 +104,15 @@ class AttendanceNotesController < ApplicationController
       if params[:fill_clock_time].blank? || !params[:fill_clock_time].is_date? || params[:fill_clock_type].blank? || params[:remark].blank?
         render :json => {result: false, content: '补打卡时间、类型和备注不能为空'}
       else
-        puts DateTime.parse(params[:fill_clock_time])
-        puts Time.parse(params[:fill_clock_time])
-        puts DateTime.parse(params[:fill_clock_time]).localtime
-        puts Time.parse(params[:fill_clock_time]).localtime
+
         if (@attendance_note.work_date.localtime.day..@attendance_note.work_date.localtime.day+1).include? DateTime.parse(params[:fill_clock_time]).day
           @attendance_note.update({
                                       fill_clock_time: Time.parse(params[:fill_clock_time]),
                                       fill_clock_type: params[:fill_clock_type],
                                       remark: params[:remark],
                                       fill_clock_mark_time: Time.now,
-                                      status: AttendanceNoteState::FILL_CLOCK
+                                      status: AttendanceNoteState::FILL_CLOCK,
+                                      over_times: @attendance_note.calc_over_times(Time.parse(params[:fill_clock_time]))
                                   })
           render json: {
                      result: true,
@@ -138,13 +140,6 @@ class AttendanceNotesController < ApplicationController
 
   def search
     super { |query|
-
-      # if current_user.admin? || current_user.manager?
-      #   @attendance_notes = AttendanceNote.paginate(:page => params[:page]).order(work_date: :DESC, status: :DESC)
-      # else
-      #   @attendance_notes = AttendanceNote.where(user_id: current_user.id).paginate(:page => params[:page]).order(work_date: :DESC, status: :DESC)
-      # end
-
 
       if current_user.admin? || current_user.manager?
       else

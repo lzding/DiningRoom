@@ -22,3 +22,4 @@ WillPaginate.per_page = 20
 
 
 $pick_order_time_limit = '16:50:00'
+$normal_off_duty_time = '18:00:00'

@@ -39,10 +39,12 @@
   <form method="get" action="<%= send("search_#{@model.pluralize}_path") %>">
 
     <div class="col-sm-12">
-      <div class="col-sm-3">
-        工号：
-        <%= select_tag('attendance_note[user_id]', options_from_collection_for_select(User.all, :id, :name, @user_id), include_blank: true) %>
-      </div>
+      <% if current_user.manager? || current_user.admin? %>
+          <div class="col-sm-3">
+            工号：
+            <%= select_tag('attendance_note[user_id]', options_from_collection_for_select(User.all, :id, :name, @user_id), include_blank: true) %>
+          </div>
+      <% end %>
       <div class="col-sm-3">
         考勤日期：
         <input type="text" name="attendance_note[work_date]" class="datepicker" value="<%= @work_date %>"/>
