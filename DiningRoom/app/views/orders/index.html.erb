@@ -40,10 +40,12 @@
   <form method="get" action="<%= send("search_#{@model.pluralize}_path") %>">
 
     <div class="col-sm-12">
-      <div class="col-sm-3">
-        工号：
-        <%= select_tag('order[user_id]', options_from_collection_for_select(User.all, :id, :name, @user_id), include_blank: true) %>
-      </div>
+      <% if current_user.manager? || current_user.admin? %>
+          <div class="col-sm-3">
+            工号：
+            <%= select_tag('order[user_id]', options_from_collection_for_select(User.all, :id, :name, @user_id), include_blank: true) %>
+          </div>
+      <% end %>
       <div class="col-sm-3">
         订餐日期：
         <input type="text" name="order[order_date]" class="datepicker" value="<%= @order_date %>"/>
@@ -53,9 +55,11 @@
       <div class="col-sm-3">
         <input type="submit" value="查找" class="btn btn-primary" name="search" style="width: 200px;"/>
       </div>
-      <div class="col-sm-3">
-        <input type="submit" value="导出" class="btn btn-primary" name="download" style="width: 200px;"/>
-      </div>
+      <% if current_user.manager? || current_user.admin? %>
+          <div class="col-sm-3">
+            <input type="submit" value="导出" class="btn btn-primary" name="download" style="width: 200px;"/>
+          </div>
+      <% end %>
     </div>
 
   </form>

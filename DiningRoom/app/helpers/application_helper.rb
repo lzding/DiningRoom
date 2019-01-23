@@ -36,7 +36,6 @@ module ApplicationHelper
     query=model.all #.unscoped
     @condition.each do |k, v|
       if (v.is_a?(Fixnum) || v.is_a?(String)) && !v.blank?
-        puts @condition.has_key?(k+'_fuzzy')
         if @condition.has_key?(k+'_fuzzy')
           query=query.where("#{k} like ?", "%#{v}%")
         else
@@ -56,8 +55,6 @@ module ApplicationHelper
       puts '----------------------------check--------------------------'
       puts v
       puts v.class
-      # puts v.values.count
-      # puts v.values.uniq
       # puts v.values.uniq!=['']
       puts '----------------------------check- end -------------------------'
 

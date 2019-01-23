@@ -5,11 +5,11 @@ class AttendanceNotesController < ApplicationController
   # GET /attendance_notes
   # GET /attendance_notes.json
   def index
-    if current_user.admin? || current_user.manager?
-      @attendance_notes = AttendanceNote.paginate(:page => params[:page]).order(work_date: :DESC, status: :DESC)
-    else
-      @attendance_notes = AttendanceNote.where(user_id: current_user.id).paginate(:page => params[:page]).order(work_date: :DESC, status: :DESC)
-    end
+    # if current_user.admin? || current_user.manager?
+    #   @attendance_notes = AttendanceNote.paginate(:page => params[:page])
+    # else
+      @attendance_notes = AttendanceNote.where(user_id: current_user.id).paginate(:page => params[:page])
+    # end
   end
 
   # GET /attendance_notes/1
@@ -134,6 +134,25 @@ class AttendanceNotesController < ApplicationController
     #   format.html { redirect_to attendance_notes_url, notice: notice }
     #   format.json { head :no_content }
     # end
+  end
+
+  def search
+    super { |query|
+
+      # if current_user.admin? || current_user.manager?
+      #   @attendance_notes = AttendanceNote.paginate(:page => params[:page]).order(work_date: :DESC, status: :DESC)
+      # else
+      #   @attendance_notes = AttendanceNote.where(user_id: current_user.id).paginate(:page => params[:page]).order(work_date: :DESC, status: :DESC)
+      # end
+
+
+      if current_user.admin? || current_user.manager?
+      else
+        query=query.where(user_id: current_user.id)
+      end
+
+      query
+    }
   end
 
   private

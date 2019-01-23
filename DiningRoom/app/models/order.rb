@@ -2,7 +2,7 @@ class Order < ApplicationRecord
 
   include Extensions::UUID
 
-  default_scope { order(user_nr: :ASC, order_date: :DESC) }
+  default_scope { order(order_date: :DESC, user_nr: :ASC) }
 
   belongs_to :user
   # belongs_to :position_object, class_name: 'Position', foreign_key: :position

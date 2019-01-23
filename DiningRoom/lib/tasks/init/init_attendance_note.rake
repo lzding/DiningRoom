@@ -14,6 +14,10 @@ namespace :init_attendance_note do
     AttendanceNote.transaction do
 
       User.all.each do |user|
+        next if user.admin?
+
+        next if !AttendanceNote.where({user_id: user.id, work_date: work_date}).blank?
+
         puts '-------------------------------'
         puts user.nr
         puts '-------------------------------'
